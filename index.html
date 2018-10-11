@@ -12,14 +12,14 @@
 <body>
 
     <div class="container">
-        <div class="jumbotron bg-danger text-center">
+        <div class="jumbotron text-center">
             <div class="text-white">
                 <h1>Train Schedule</h1> 
                 <p>Chee Chee Choo Choo</p> 
             </div>
         </div>
 
-        <div class="panel panel-default hidden" id="train-schedule-list">
+        <div class="panel panel-primary hidden" id="train-schedule-list">
             <div class="panel-heading">
                 <h6>Current Train Schedule</h6>
             </div>
@@ -36,51 +36,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Mark</td>
-                            <td>foo</td>
-                            <td>blah</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+                        
                     </tbody>
                 </table>
             </div>
         </div>
 
-        <div class="panel panel-default">
-            <div class="panel-heading bg-primary">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
                 <h6>Add Train</h6>
             </div>
 
             <div class="panel-body">
-                <div class="form-group">
+                <div class="form-group" id="train-name-group">
                     <label>Train Name</label>
-                    <input type="text" class="form-control">
+                    <input type="text" id="train-name" class="form-control" placeholder="Train name">
+                    <span class="glyphicon glyphicon-remove form-control-feedback hidden"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="destination-group">
                     <label>Destination</label>
-                    <input type="text" class="form-control">
+                    <input type="text" id="destination" class="form-control" placeholder="Destination">
+                    <span class="glyphicon glyphicon-remove form-control-feedback hidden"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="first-train-time-group">
                     <label>First Train Time (HH:mm - military time)</label>
-                    <input type="time" class="form-control">
+                    <input type="text" id="first-train-time" class="form-control" placeholder="HH:mm">
+                    <span class="glyphicon glyphicon-remove form-control-feedback hidden"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="frequency-group">
                     <label>Frequency(min)</label>
-                    <input type="number" class="form-control">
+                    <input type="number" id="frequency" class="form-control" placeholder="Frequency (minutes)">
+                    <span class="glyphicon glyphicon-remove form-control-feedback hidden"></span>
                 </div>
                 <div class="form-group">
                     <button type="button" class="btn btn-primary" id="submit-btn">Submit</button> 
@@ -92,10 +78,124 @@
 
     <script>
 
-        $("#submit-btn").click(function(){
+        $(document).ready(function(){
+
+            var tableData = JSON.parse(window.localStorage.getItem("table"));
+            if(!tableData)
+            {
+                return;
+            }
+
+            for(var i=0 ; i < tableData.length; i++)
+            {
+                CreateTableEntry(tableData[i].trainName, tableData[i].destination, tableData[i].firstTrainTime, tableData[i].frequency);
+            }
+
             $("#train-schedule-list").removeClass('hidden');
         });
-        
+
+        $("#submit-btn").click(function(){
+
+            var trainName = $("#train-name");
+            var destination = $("#destination");
+            var firstTrainTime = $("#first-train-time");
+            var frequency = $("#frequency");
+
+            if(!ValidateInput(trainName, destination, firstTrainTime, frequency))
+            {
+                return;
+            }
+
+            $("#train-schedule-list").removeClass('hidden');
+
+            CreateTableEntry(trainName.val(), destination.val(), firstTrainTime.val(), frequency.val());
+
+            var dataRow = {};
+            dataRow.trainName = trainName.val();
+            dataRow.destination = destination.val();
+            dataRow.firstTrainTime = firstTrainTime.val();
+            dataRow.frequency = frequency.val();
+
+            var storageData = JSON.parse(window.localStorage.getItem("table"));
+            if(!storageData)
+            {
+                storageData = [];
+            }
+            
+            storageData.push(dataRow);
+
+            window.localStorage.setItem("table", JSON.stringify(storageData));
+
+        });
+
+        function CreateTableEntry(trainName, destination, firstTrainTime, frequency)
+        {
+            var tableBody = $("tbody");
+            var trTag = $("<tr>");
+            trTag.append($("<td>").text(trainName));
+            trTag.append($("<td>").text(destination));
+            trTag.append($("<td>").text(firstTrainTime));
+            trTag.append($("<td>").text(frequency));
+            trTag.append($("<td>").text(Math.floor(Math.random() * 120)));
+
+            tableBody.append(trTag);
+        }
+
+        function ValidateInput(trainName, destination, firstTrainTime, frequency)
+        {
+            var inputIsGood = true;
+
+            if(!(trainName.val().search(/(\w|\d)+/g) >= 0))
+            {
+                $("#train-name-group").addClass("has-error has-feedback");
+                $("#train-name-group > span").removeClass("hidden");
+                inputIsGood = false;
+            }
+            else
+            {
+                $("#train-name-group").removeClass("has-error has-feedback");
+                $("#train-name-group > span").addClass("hidden");
+            }
+
+            if(!(destination.val().search(/(\w|\d)+/g) >= 0))
+            {
+                $("#destination-group").addClass("has-error has-feedback");
+                $("#destination-group > span").removeClass("hidden");
+                inputIsGood = false;
+            }
+            else
+            {
+                $("#destination-group").removeClass("has-error has-feedback");
+                $("#destination-group > span").addClass("hidden");
+            }
+
+            if(!(firstTrainTime.val().search(/^(([0-2][0-3])|([0-1][0-9]))\:[0-5][0-9]$/g) >= 0))
+            {
+                $("#first-train-time-group").addClass("has-error has-feedback");
+                $("#first-train-time-group > span").removeClass("hidden");
+                inputIsGood = false;
+            }
+            else
+            {
+                $("#first-train-time-group").removeClass("has-error has-feedback");
+                $("#first-train-time-group > span").addClass("hidden");
+            }
+
+            if(!(frequency.val().search(/\d+/g) >= 0))
+            {
+                $("#frequency-group").addClass("has-error has-feedback");
+                $("#frequency-group > span").removeClass("hidden");
+                inputIsGood = false;
+            }
+            else
+            {
+                $("#frequency-group").removeClass("has-error has-feedback");
+                $("#frequency-group > span").addClass("hidden");
+            }
+
+            return inputIsGood;
+        }
+
     </script>
 </body>
 </html>
