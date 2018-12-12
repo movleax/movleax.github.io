@@ -1,201 +1,187 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+body {
+    height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(rgb(29, 32, 32), rgb(54, 63, 63), #526164);
+  overflow: hidden;
+  overflow-y: hidden;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(16, 17, 17), #262a2b);
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  left:-200px;
+  /* display: none; */
+}
+
+.profile-pic{
+    border-radius: 50%;
+    border: solid #000000;
+    border-color: black;
+    width: 184px;
+    height: 184px;
+    position:relative;
+    top: 10px;
+    left: 5px;
+}
+
+.profile-pic-hr{
+    display: block;
+    height: 0px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    position: relative;
+    top: 2px;
+    margin: 0.5em 0;
+    padding: 0; 
+    border-color:black;
+}
+
+.profile-name{
+    font-style: italic;
+    color: papayawhip;
+    position: relative;
+    text-align: center;
+}
+
+.sidebar a {
+  display: block;
+  color: papayawhip;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  color: gold;
+}
+
+.sidebar a:hover:not(.active) {
+  color: goldenrod;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+
+  .profile-pic {display: none;}
+  .profile-pic-hr {display: none;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+
+  .profile-pic {display: none;}
+  .profile-pic-hr {display: none;}
+}
+
+.content{
+    overflow-y: scroll;
+}
+
+
+/* The hero image */
+.splashscreen {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("resources\\images\\american_river.jpg");
+  height: 100%;
+  /* min-height: 500px; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    width:100%;
+
+    /* display: none; */
+}
+
+/* Place text in the middle of the image */
+.splashscreen-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  display: none;
+}
+
+#splashscreen-loader {
+  border: 7px solid #f3f3f3; /* Light grey */
+  border-top: 7px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  animation: spin 0.65s linear infinite;
+  position: absolute;
+  top: 48%;
+  left: 48%;
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+</style>
 </head>
-<body>
+    <body>
 
-    <div class="container">
-        <div class="jumbotron text-center">
-            <div class="text-white">
-                <h1>Train Schedule</h1> 
-                <p>Chee Chee Choo Choo</p> 
+        <div class="sidebar">
+            <div>
+                <img class="profile-pic" src="resources\\images\\profile_pic.jpg" alt="Profile picture">
+                <h3 class="profile-name">Austin Dolve</h4>
+                <hr class="profile-pic-hr">
+                <hr class="profile-pic-hr">
             </div>
+            <a class="active" href="#home">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
         </div>
 
-        <div class="panel panel-primary hidden" id="train-schedule-list">
-            <div class="panel-heading">
-                <h6>Current Train Schedule</h6>
+        <div class="splashscreen">
+            <div class="splashscreen-text">
+                <h1>Welcome!</h1>
             </div>
-
-            <div class="panel-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Train Name</th>
-                            <th scope="col">Destination</th>
-                            <th scope="col">Frequency (min)</th>
-                            <th scope="col">Next Arrival</th>
-                            <th scope="col">Minutes Away</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                    </tbody>
-                </table>
-            </div>
+            <div id="splashscreen-loader"></div>
         </div>
 
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h6>Add Train</h6>
-            </div>
-
-            <div class="panel-body">
-                <div class="form-group" id="train-name-group">
-                    <label>Train Name</label>
-                    <input type="text" id="train-name" class="form-control" placeholder="Train name">
-                    <span class="glyphicon glyphicon-remove form-control-feedback hidden"></span>
-                </div>
-                <div class="form-group" id="destination-group">
-                    <label>Destination</label>
-                    <input type="text" id="destination" class="form-control" placeholder="Destination">
-                    <span class="glyphicon glyphicon-remove form-control-feedback hidden"></span>
-                </div>
-                <div class="form-group" id="first-train-time-group">
-                    <label>First Train Time (HH:mm - military time)</label>
-                    <input type="text" id="first-train-time" class="form-control" placeholder="HH:mm">
-                    <span class="glyphicon glyphicon-remove form-control-feedback hidden"></span>
-                </div>
-                <div class="form-group" id="frequency-group">
-                    <label>Frequency(min)</label>
-                    <input type="number" id="frequency" class="form-control" placeholder="Frequency (minutes)">
-                    <span class="glyphicon glyphicon-remove form-control-feedback hidden"></span>
-                </div>
-                <div class="form-group">
-                    <button type="button" class="btn btn-primary" id="submit-btn">Submit</button> 
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <script>
-
-        $(document).ready(function(){
-
-            var tableData = JSON.parse(window.localStorage.getItem("table"));
-            if(!tableData)
-            {
-                return;
-            }
-
-            for(var i=0 ; i < tableData.length; i++)
-            {
-                CreateTableEntry(tableData[i].trainName, tableData[i].destination, tableData[i].firstTrainTime, tableData[i].frequency);
-            }
-
-            $("#train-schedule-list").removeClass('hidden');
-        });
-
-        $("#submit-btn").click(function(){
-
-            var trainName = $("#train-name");
-            var destination = $("#destination");
-            var firstTrainTime = $("#first-train-time");
-            var frequency = $("#frequency");
-
-            if(!ValidateInput(trainName, destination, firstTrainTime, frequency))
-            {
-                return;
-            }
-
-            $("#train-schedule-list").removeClass('hidden');
-
-            CreateTableEntry(trainName.val(), destination.val(), firstTrainTime.val(), frequency.val());
-
-            var dataRow = {};
-            dataRow.trainName = trainName.val();
-            dataRow.destination = destination.val();
-            dataRow.firstTrainTime = firstTrainTime.val();
-            dataRow.frequency = frequency.val();
-
-            var storageData = JSON.parse(window.localStorage.getItem("table"));
-            if(!storageData)
-            {
-                storageData = [];
-            }
+        <div class="content">
             
-            storageData.push(dataRow);
+        </div>
 
-            window.localStorage.setItem("table", JSON.stringify(storageData));
+    </body>
 
-        });
+    <script src=".\\resources\\scripts\\main.js"></script>
 
-        function CreateTableEntry(trainName, destination, firstTrainTime, frequency)
-        {
-            var tableBody = $("tbody");
-            var trTag = $("<tr>");
-            trTag.append($("<td>").text(trainName));
-            trTag.append($("<td>").text(destination));
-            trTag.append($("<td>").text(firstTrainTime));
-            trTag.append($("<td>").text(frequency));
-            trTag.append($("<td>").text(Math.floor(Math.random() * 120)));
-
-            tableBody.append(trTag);
-        }
-
-        function ValidateInput(trainName, destination, firstTrainTime, frequency)
-        {
-            var inputIsGood = true;
-
-            if(!(trainName.val().search(/(\w|\d)+/g) >= 0))
-            {
-                $("#train-name-group").addClass("has-error has-feedback");
-                $("#train-name-group > span").removeClass("hidden");
-                inputIsGood = false;
-            }
-            else
-            {
-                $("#train-name-group").removeClass("has-error has-feedback");
-                $("#train-name-group > span").addClass("hidden");
-            }
-
-            if(!(destination.val().search(/(\w|\d)+/g) >= 0))
-            {
-                $("#destination-group").addClass("has-error has-feedback");
-                $("#destination-group > span").removeClass("hidden");
-                inputIsGood = false;
-            }
-            else
-            {
-                $("#destination-group").removeClass("has-error has-feedback");
-                $("#destination-group > span").addClass("hidden");
-            }
-
-            if(!(firstTrainTime.val().search(/^(([0-2][0-3])|([0-1][0-9]))\:[0-5][0-9]$/g) >= 0))
-            {
-                $("#first-train-time-group").addClass("has-error has-feedback");
-                $("#first-train-time-group > span").removeClass("hidden");
-                inputIsGood = false;
-            }
-            else
-            {
-                $("#first-train-time-group").removeClass("has-error has-feedback");
-                $("#first-train-time-group > span").addClass("hidden");
-            }
-
-            if(!(frequency.val().search(/\d+/g) >= 0))
-            {
-                $("#frequency-group").addClass("has-error has-feedback");
-                $("#frequency-group > span").removeClass("hidden");
-                inputIsGood = false;
-            }
-            else
-            {
-                $("#frequency-group").removeClass("has-error has-feedback");
-                $("#frequency-group > span").addClass("hidden");
-            }
-
-            return inputIsGood;
-        }
-
-    </script>
-</body>
 </html>
