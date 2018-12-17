@@ -16,6 +16,8 @@ function AnimateIntro()
 {
     HideSplashScreen(1000, 1000);
     ShowSidePanel(250, 3000);
+    ShowContainer(250, 3250)
+    //ShowContent(250, 2000);
 }
 
 function HideSplashScreen(animationSpeed, timeout)
@@ -27,8 +29,18 @@ function HideSplashScreen(animationSpeed, timeout)
     setTimeout(() => { $('.splashscreen').fadeOut(animationSpeed); }, timeout);
 }
 
+function ShowContainer(animationSpeed, timeout)
+{
+    setTimeout(() => { $('.container').fadeIn(animationSpeed);}, timeout);
+}
+
 function ShowSidePanel(animationSpeed, timeout)
 {
     setTimeout(() => { $('.sidebar').animate({left: '0px'}, animationSpeed); }, timeout);
+}
+
+function ShowContent(animationSpeed, timeout)
+{
+    setTimeout(() => { $('.content').fadeIn(animationSpeed);}, timeout);
 }
 

@@ -4,13 +4,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
+html{
+    height: 100%;
+}
 body {
     height: 100%;
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-image: linear-gradient(rgb(29, 32, 32), rgb(54, 63, 63), #526164);
-  overflow: hidden;
-  overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(rgb(29, 32, 32), rgb(54, 63, 63), #526164);
+    overflow: hidden;
+    overflow-y: hidden;
+}
+
+#container {
+    /* display: none; */
+    /* box-sizing: padding-box; */
+    display: block;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    float: right;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 10px;
+}
+.grid-item {
+  padding: 15px;
+  text-align: center;
 }
 
 .sidebar {
@@ -73,7 +97,7 @@ body {
 div.content {
   margin-left: 200px;
   padding: 1px 16px;
-  height: 1000px;
+  height: 100%;
 }
 
 @media screen and (max-width: 700px) {
@@ -100,7 +124,7 @@ div.content {
 }
 
 .content{
-    overflow-y: scroll;
+    
 }
 
 
@@ -152,23 +176,97 @@ div.content {
   100% { transform: rotate(360deg); }
 }
 
+
+.project {
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
+  max-width: 275px;
+  margin: auto;
+  padding: 5px;
+  text-align: center;
+  font-family: arial;
+  background-color: antiquewhite;
+  /* background-image: url("resources\\images\\MazeSolveJS.PNG"); */
+  /* background-size: cover; */
+  position: relative;
+  /* overflow: auto; */
+}
+
+.project img{
+    width: 100%;
+}
+
+.title h1 {
+    /* border: 0;
+    outline: 0; */
+    padding: 5px;
+    margin: 0;
+    /* color: white;
+    background-color: #000; */
+    /* text-align: center; */
+    /* cursor: pointer; */
+    /* font-size: 12px; */
+    position: relative;
+}
+
+.project-info {
+  position: relative;
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  font-size: 18px;
+  background-color: inherit;
+  /* display: none; */
+}
+
+/* .project:hover  img {
+  opacity: 0.2;
+}
+
+.project:hover .project-info {
+  display: block;
+} */
+
+.project button {
+    margin: 5px;
+    padding: 5px;
+    background-color: peachpuff;
+    color: rgb(30, 65, 71);
+    border: 2px solid rgb(67, 139, 151);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.project button:hover {
+    opacity: 0.7;
+    background-color: rgb(226, 185, 148);
+}
+
 </style>
 </head>
     <body>
 
-        <div class="sidebar">
-            <div>
-                <img class="profile-pic" src="resources\\images\\profile_pic.jpg" alt="Profile picture">
-                <h3 class="profile-name">Austin Dolve</h4>
-                <hr class="profile-pic-hr">
-                <hr class="profile-pic-hr">
+        <div class="content">
+            <div class="sidebar">
+                <div>
+                    <img class="profile-pic" src="resources\\images\\profile_pic.jpg" alt="Profile picture">
+                    <h3 class="profile-name">Austin Dolve</h4>
+                    <hr class="profile-pic-hr">
+                    <hr class="profile-pic-hr">
+                </div>
+                <a class="active" href="#home">Home</a>
+                <a href="#news">News</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>
             </div>
-            <a class="active" href="#home">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
-        </div>
 
+            <div id="container">
+                <button onclick="showContent()">Show content</button>
+            </div>
+        </div>
+        
         <div class="splashscreen">
             <div class="splashscreen-text">
                 <h1>Welcome!</h1>
@@ -176,11 +274,102 @@ div.content {
             <div id="splashscreen-loader"></div>
         </div>
 
-        <div class="content">
-            
-        </div>
-
     </body>
+
+    <script>
+
+        const projectsData = [
+            {
+                title: "MazeSolveJS",
+                projectInfo: "JavaScript, canvas-based web app. This web app is designed to load in a map file, which describes a maze, and solve the maze using a selected algorithm.",
+                photo: "resources\\images\\MazeSolveJS.PNG",
+                buttons: [["new-tab", "https://github.com/movleax/MazeSolverJS", "GitHub Project"], ["load", "http://www.google.com", "Load"]]
+            },
+            {
+                title: "2D Dungeon Generator",
+                projectInfo: "Top-down 2D Map generator in C#. The program reads shape files from a designated folder, and performs calculations to connect these shapes in a cohesive manner. ",
+                photo: "resources\\images\\dungeonGenerator.jpg",
+                buttons: [["new-tab", "https://github.com/movleax/dungeonGeneratorPoC", "GitHub Project"]]
+            },
+            {
+                title: "StopWatch++",
+                projectInfo: "Created a WPF application to help keep track of how long certain work tasks take. This also helps organize specific tasks and provides good feedback. Utilized the Xceed toolkit to create child windows inside of the main window. Tasks can be created, deleted. Each task has a timer value hh:mm:ss, start and stop button for the timer, and a logging mechanism. Log items for a given task include the title, but also contain an optional description. Log items can be modified once created.",
+                photo: "resources\\images\\stopwatchpp.jpg",
+                buttons: [["new-tab", "https://github.com/movleax/StopWatch", "GitHub Project"]]
+            },
+            {
+                title: "Hipster Delivery Run",
+                projectInfo: "Developed a 2D \“Infinite Runner\” game that targets android devices. Unity3D was used as the game engine to develop and publish the app. C# was used as the primary language for making the logic and game flow.",
+                photo: "resources\\images\\hipsterDeliverRun.jpg",
+                buttons: [["new-tab", "https://play.google.com/store/apps/details?id=com.austindolve.hipsterdelivery&hl=en_US", "Google Play Store"]]
+            },
+            {
+                title: "MazeSolveJS",
+                projectInfo: "JavaScript, canvas-based web app. This web app is designed to load in a map file, which describes a maze, and solve the maze using a selected algorithm.",
+                photo: "resources\\images\\MazeSolveJS.PNG",
+                buttons: [["new-tab", "http://www.google.com", "GitHub Project"], ["load", "http://www.google.com", "Load"]]
+            },
+            {
+                title: "MazeSolveJS",
+                projectInfo: "JavaScript, canvas-based web app. This web app is designed to load in a map file, which describes a maze, and solve the maze using a selected algorithm.",
+                photo: "resources\\images\\MazeSolveJS.PNG",
+                buttons: [["new-tab", "http://www.google.com", "GitHub Project"], ["load", "http://www.google.com", "Load"]]
+            }
+        ];
+
+        function getButtonClickType(button)
+        {
+            var onclick;
+            
+            switch(button[0])             
+            {
+                case "new-tab": onclick = `window.open('${button[1]}')`; break;
+                case "load": onclick = `$('#container').load('${button[1]}')`; break;
+            }
+
+            return onclick;
+        }
+
+        function getButtons(buttons)
+        {
+            console.log(onclick);
+            
+            return `
+                ${buttons.map((button) => `<button type="button" onclick="${getButtonClickType(button)}">${button[2]}</button>`).join('')}
+            `;
+        }
+
+        function projectTemplate(project)
+        {
+            return `
+            <div class="grid-item">
+                <div class="project">
+                    <img src="${project.photo}" alt="${project.title}">
+                    <div class="title">
+                        <h1>${project.title}</h1>
+                    </div>
+                    <div class="project-info">
+                        ${project.projectInfo}
+                    </div>
+
+                    ${project.buttons ? getButtons(project.buttons) : ''}
+                </div>
+            </div>
+            `;
+        }
+            
+        function showContent() {
+
+            $("#container").append("<h1>HI</h1>");
+            
+            document.getElementById("container").innerHTML = `
+            <div class='grid-container'>
+            ${projectsData.map(projectTemplate).join('')}
+            </div>
+            `;
+
+        }
+    </script>
 
     <script src=".\\resources\\scripts\\main.js"></script>
 
