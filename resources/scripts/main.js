@@ -30,7 +30,7 @@ const projectsData = [
         buttons: [["load", "", "More Info Coming soon"]]
     },
     {
-        title: "Jacob",
+        title: "Mario Clone",
         projectInfo: "Another interesting classic written in C++. This offshoot mario clone offers a fun 2D platformer experience where items must be collected and enemies defeated.",
         photo: "resources\\images\\jacob_sdl.PNG",
         buttons: [["load", "", "More Info Coming soon"]]
