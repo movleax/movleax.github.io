@@ -1,0 +1,239 @@
+html{
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(rgb(29, 32, 32), rgb(54, 63, 63), #526164);
+    overflow: hidden;
+    overflow-y: hidden;
+}
+
+#container {
+    /* display: none; */
+    /* box-sizing: padding-box; */
+    display: block;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    float: right;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 10px;
+}
+.grid-item {
+  padding: 15px;
+  text-align: center;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(16, 17, 17), #262a2b);
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  left:-200px;
+  /* display: none; */
+}
+
+.profile-pic{
+    border-radius: 50%;
+    border: solid #000000;
+    border-color: black;
+    width: 184px;
+    height: 184px;
+    position:relative;
+    top: 10px;
+    left: 5px;
+}
+
+.profile-pic-hr{
+    display: block;
+    height: 0px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    position: relative;
+    top: 2px;
+    margin: 0.5em 0;
+    padding: 0; 
+    border-color:black;
+}
+
+.profile-name{
+    font-style: italic;
+    color: papayawhip;
+    position: relative;
+    text-align: center;
+}
+
+.sidebar a {
+  display: block;
+  color: papayawhip;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  color: gold;
+}
+
+.sidebar a:hover:not(.active) {
+  color: goldenrod;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 100%;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+
+  .profile-pic {display: none;}
+  .profile-pic-hr {display: none;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+
+  .profile-pic {display: none;}
+  .profile-pic-hr {display: none;}
+}
+
+.content{
+    
+}
+
+
+/* The hero image */
+.splashscreen {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("resources\\images\\american_river.jpg");
+  height: 100%;
+  /* min-height: 500px; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    width:100%;
+
+    /* display: none; */
+}
+
+/* Place text in the middle of the image */
+.splashscreen-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  display: none;
+}
+
+#splashscreen-loader {
+  border: 7px solid #f3f3f3; /* Light grey */
+  border-top: 7px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  animation: spin 0.65s linear infinite;
+  position: absolute;
+  top: 48%;
+  left: 48%;
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.project {
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
+  max-width: 275px;
+  margin: auto;
+  padding: 5px;
+  text-align: center;
+  font-family: arial;
+  background-color: antiquewhite;
+  /* background-image: url("resources\\images\\MazeSolveJS.PNG"); */
+  /* background-size: cover; */
+  position: relative;
+  /* overflow: auto; */
+}
+
+.project img{
+    width: 100%;
+}
+
+.title h1 {
+    /* border: 0;
+    outline: 0; */
+    padding: 5px;
+    margin: 0;
+    /* color: white;
+    background-color: #000; */
+    /* text-align: center; */
+    /* cursor: pointer; */
+    /* font-size: 12px; */
+    position: relative;
+}
+
+.project-info {
+  position: relative;
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  font-size: 18px;
+  background-color: inherit;
+  /* display: none; */
+}
+
+/* .project:hover  img {
+  opacity: 0.2;
+}
+
+.project:hover .project-info {
+  display: block;
+} */
+
+.project button {
+    margin: 5px;
+    padding: 5px;
+    background-color: peachpuff;
+    color: rgb(30, 65, 71);
+    border: 2px solid rgb(67, 139, 151);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.project button:hover {
+    opacity: 0.7;
+    background-color: rgb(226, 185, 148);
+}
