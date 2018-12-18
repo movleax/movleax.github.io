@@ -44,7 +44,12 @@ function getButtonClickType(button)
     switch(button[0])             
     {
         case "new-tab": onclick = `window.open('${button[1]}')`; break;
-        case "load": onclick = `$('#container').load('${button[1]}')`; break;
+        case "load": onclick = `$('#container').load('${button[1]}', function(responseTxt, statusTxt, xhr){
+            if(statusTxt == "success")
+              alert("External content loaded successfully!");
+            if(statusTxt == "error")
+              alert("Error: " + xhr.status + ": " + xhr.statusText);
+          });)`; break;
     }
 
     return onclick;
