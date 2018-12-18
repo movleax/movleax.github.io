@@ -3,7 +3,7 @@ const projectsData = [
         title: "MazeSolveJS",
         projectInfo: "JavaScript, canvas-based web app. This web app is designed to load in a map file, which describes a maze, and solve the maze using a selected algorithm.",
         photo: "resources\\images\\MazeSolveJS.PNG",
-        buttons: [["new-tab", "https://github.com/movleax/MazeSolverJS", "GitHub Project"], ["load", "http://www.google.com", "Load"]]
+        buttons: [["new-tab", "https://github.com/movleax/MazeSolverJS", "GitHub Project"], ["load", "../MazeSolverJS/index.html", "Load"]]
     },
     {
         title: "Map Generator",
