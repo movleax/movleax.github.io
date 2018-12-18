@@ -39,7 +39,7 @@ body {
   position: fixed;
   height: 100%;
   overflow: auto;
-  left:-200px;
+  left:-100%;
   /* display: none; */
 }
 
@@ -94,29 +94,6 @@ div.content {
   height: 100%;
 }
 
-@media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
-
-  .profile-pic {display: none;}
-  .profile-pic-hr {display: none;}
-}
-
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
-
-  .profile-pic {display: none;}
-  .profile-pic-hr {display: none;}
-}
-
 .content{
     
 }
@@ -152,7 +129,7 @@ div.content {
   display: none;
 }
 
-#splashscreen-loader {
+.splashscreen-loader {
   border: 7px solid #f3f3f3; /* Light grey */
   border-top: 7px solid #3498db; /* Blue */
   border-radius: 50%;
@@ -236,4 +213,36 @@ div.content {
 .project button:hover {
     opacity: 0.7;
     background-color: rgb(226, 185, 148);
+}
+
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+
+  .profile-pic {display: none;}
+  .profile-pic-hr {display: none;}
+
+  .grid-container {
+    grid-template-columns: auto;
+  }
+
+  .splashscreen-loader {
+    left: 45%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+
+  .profile-pic {display: none;}
+  .profile-pic-hr {display: none;}
 }

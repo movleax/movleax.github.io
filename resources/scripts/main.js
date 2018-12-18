@@ -91,7 +91,7 @@ function LoadProjects() {
 $( document ).ready( () => {
     $('.splashscreen-text').fadeIn(1500, "swing");
     $(".splashscreen-text").animate({height: '150px', width: '150px'}, 125, () =>{
-        $("#splashscreen-loader").fadeIn(400);
+        $(".splashscreen-loader").fadeIn(400);
         setTimeout(() => {
             AnimateIntro();
         }, 3000);
@@ -140,9 +140,9 @@ function AnimateIntro()
 
 function HideSplashScreen(animationSpeed, timeout)
 {
-    $("#splashscreen-loader").css("border-left", "7px solid #3498db");
-    $("#splashscreen-loader").css("border-right", "7px solid #3498db");
-    $("#splashscreen-loader").css("border-bottom", "7px solid #3498db");
+    $(".splashscreen-loader").css("border-left", "7px solid #3498db");
+    $(".splashscreen-loader").css("border-right", "7px solid #3498db");
+    $(".splashscreen-loader").css("border-bottom", "7px solid #3498db");
 
     setTimeout(() => { $('.splashscreen').fadeOut(animationSpeed); }, timeout);
 }
