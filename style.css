@@ -245,4 +245,12 @@ div.content {
 
   .profile-pic {display: none;}
   .profile-pic-hr {display: none;}
+
+  .grid-container {
+    grid-template-columns: auto;
+  }
+
+  .splashscreen-loader {
+    left: 45%;
+  }
 }
