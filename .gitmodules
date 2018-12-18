@@ -1,0 +1,3 @@
+[submodule "MazeSolverJS"]
+	path = MazeSolverJS
+	url = https://github.com/movleax/MazeSolverJS.git
