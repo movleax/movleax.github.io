@@ -88,6 +88,31 @@ function LoadProjects() {
 
 }
 
+function LoadContactInfo()
+{
+    $("#container").empty();
+    
+    document.getElementById("container").innerHTML = `
+    <div class="contact">    
+        <div class="contact-header">
+            Contact & Info
+        </div>
+        <hr>
+            <img class="contact-side-img" src="resources\\images\\gecko.jpg" alt="gecko picture"> 
+        
+        <div class="contact-content">
+            <span>The best way to contact me would be through LinkedIn </span><a href="https://www.linkedin.com/in/austindolve/" rel="noopener noreferrer" target="_blank"><img class="linkedin-img" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn"></a>
+        </div>
+    </div>
+    `;
+}
+
+function typeWriterContactMe()
+{
+    
+}
+
+
 $( document ).ready( () => {
     $('.splashscreen-text').fadeIn(1500, "swing");
     $(".splashscreen-text").animate({height: '150px', width: '150px'}, 125, () =>{
@@ -102,7 +127,7 @@ $( document ).ready( () => {
         {
             case "home": $("#container").empty(); break;
             case "projects": LoadProjects(); break;
-            case "contact": $("#container").empty(); break;
+            case "contact": LoadContactInfo(); break;
             case "about": $("#container").empty(); break;
         }
         selectSideBarLink(e.target.id);
@@ -129,7 +154,8 @@ function selectSideBarLink(linkId)
     });
 
 }
-
+// HideSplashScreen(10, 10);
+// ShowSidePanel(10, 10);
 function AnimateIntro()
 {
     HideSplashScreen(1000, 1000);

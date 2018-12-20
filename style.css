@@ -15,7 +15,8 @@ body {
     /* display: none; */
     /* box-sizing: padding-box; */
     display: block;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     height: 100%;
     width: 100%;
     float: right;
@@ -41,6 +42,19 @@ body {
   overflow: auto;
   left:-100%;
   /* display: none; */
+}
+
+.sidebar a img{
+  width: 60%;
+  background-color: papayawhip;
+  padding: 5px;
+}
+
+.linkedin-img{
+  width: 2%;
+  height: 2%;
+  /* background-color: papayawhip; */
+  /* padding: 5px; */
 }
 
 .profile-pic{
@@ -215,6 +229,42 @@ div.content {
     background-color: rgb(226, 185, 148);
 }
 
+
+.contact{
+  position: relative; 
+  margin:auto;
+  width: 100%;
+  height: 100%;
+  color:papayawhip;
+}
+
+.contact-header{
+  font-weight: bold;
+  font-style: italic;
+  font-family: fantasy;
+  font-size: 42px;
+  color:goldenrod;
+}
+
+.contact-content{
+  position: relative;
+  font-size: 18px;
+  top: 10%;
+  left: 5%;
+}
+
+.contact-header-img{
+  background-image: url("resources\\images\\hawaii_beach.jpg");
+  background-position: 0px 60%;
+  width: 100%;
+  height: 15%;
+}
+
+.contact-side-img{
+  display: block;
+  float: right;
+  height: 90%;
+}
 
 @media screen and (max-width: 700px) {
   .sidebar {
