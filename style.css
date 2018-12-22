@@ -1,25 +1,31 @@
 html{
-    height: 100%;
+  width: 100%; 
+  height:100%; 
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 body {
     height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-image: linear-gradient(rgb(29, 32, 32), rgb(54, 63, 63), #526164);
     overflow: hidden;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
 
-#container {
+.container {
     /* display: none; */
     /* box-sizing: padding-box; */
-    display: block;
+    /* display: block; */
     overflow-y: auto;
     overflow-x: hidden;
     height: 100%;
-    width: 100%;
-    float: right;
+    /* width: 100%; */
+    /* float: left; */
+    /* padding: 2px; */
 }
 
 .grid-container {
@@ -33,15 +39,16 @@ body {
 }
 
 .sidebar {
-  margin: 0;
-  padding: 0;
+  /* margin: 0;
+  padding: 0; */
   width: 200px;
   background-image: linear-gradient(rgb(0, 0, 0), rgb(16, 17, 17), #262a2b);
-  position: fixed;
+  /* position: fixed; */
   height: 100%;
-  overflow: auto;
+  /* overflow: auto; */
   left:-100%;
   /* display: none; */
+  float: left;
 }
 
 .sidebar a img{
@@ -102,14 +109,21 @@ body {
   color: goldenrod;
 }
 
-div.content {
+/* div.content {
   margin-left: 200px;
   padding: 1px 16px;
   height: 100%;
-}
+} */
 
-.content{
-    display: block;
+.page-content {
+  width:100%;
+  height: 100%;
+  padding: 0px;
+    margin: 0;
+    /* overflow: hidden; */
+    /* display: grid; */
+    /* padding: 5px;   */
+    /* grid-template-columns: auto auto; */
 }
 
 

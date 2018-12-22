@@ -44,7 +44,7 @@ function getButtonClickType(button)
     switch(button[0])             
     {
         case "new-tab": onclick = `window.open('${button[1]}')`; break;
-        case "load": onclick = `$('#container').load('${button[1]}')`; break;
+        case "load": onclick = `$('.container').load('${button[1]}')`; break;
     }
 
     return onclick;
@@ -78,9 +78,9 @@ function projectTemplate(project)
     
 function LoadProjects() {
 
-    $("#container").empty();
+    $(".container").empty();
     
-    document.getElementById("container").innerHTML = `
+    document.getElementsByClassName("container")[0].innerHTML = `
     <div class='grid-container'>
     ${projectsData.map(projectTemplate).join('')}
     </div>
@@ -90,9 +90,8 @@ function LoadProjects() {
 
 function LoadContactInfo()
 {
-    $("#container").empty();
-    
-    document.getElementById("container").innerHTML = `
+    $(".container").empty();
+    document.getElementsByClassName("container")[0].innerHTML = `
     <div class="contact">    
         <div class="contact-header">
             Contact & Info
@@ -125,10 +124,10 @@ $( document ).ready( () => {
     $(".sidebar a").on("click", (e)=>{
         switch(e.target.id)
         {
-            case "home": $("#container").empty(); break;
+            case "home": $(".container").empty(); break;
             case "projects": LoadProjects(); break;
             case "contact": LoadContactInfo(); break;
-            case "about": $("#container").empty(); break;
+            case "about": $(".container").empty(); break;
         }
         selectSideBarLink(e.target.id);
     });
