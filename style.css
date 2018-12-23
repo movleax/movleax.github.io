@@ -280,6 +280,60 @@ body {
   height: 90%;
 }
 
+.content-element{
+  background: seashell;
+  padding: 15px;
+  margin: 0;
+  overflow: auto;
+  /* border-bottom: 2px solid darkgray; */
+}
+
+div.home > div:nth-of-type(odd){
+  background: antiquewhite;
+}
+
+.content-title{
+  font-size: 48px;
+  font-weight: bold;
+  font-style: italic;
+  color:black;
+  /* padding: 5px; */
+  margin: 0;
+}
+
+.content-information{
+  padding: 5px;
+  margin: 0;
+  margin-left: 51%;
+}
+
+.content-picture{
+  width: 50%;
+  float: left;
+  display: block;
+}
+
+.content-details{
+  font-size: 20px;
+  line-height: 30px;
+  color:black;
+}
+
+.content-information button {
+  margin: 5px;
+  padding: 5px;
+  background-color: peachpuff;
+  color: rgb(30, 65, 71);
+  border: 2px solid rgb(67, 139, 151);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.content-information button:hover {
+  opacity: 0.7;
+  background-color: rgb(226, 185, 148);
+}
+
 @media screen and (max-width: 700px) {
   .sidebar {
     width: 100%;
