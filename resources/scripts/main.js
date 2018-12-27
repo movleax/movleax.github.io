@@ -174,6 +174,25 @@ function LoadContactInfo()
     `;
 }
 
+function LoadAbout()
+{
+    $(".container").empty();
+    document.getElementsByClassName("container")[0].innerHTML = `
+    <div class="contact">    
+        <div class="contact-header">
+            About
+        </div>
+        <hr>
+            <img class="contact-side-img" src="resources\\images\\ocean_boat_two_isalnds.jpg" alt="ocean"> 
+        
+        <div class="contact-content">
+            <p></p>
+
+        </div>
+    </div>
+    `;
+}
+
 function typeWriterContactMe()
 {
     
@@ -197,7 +216,7 @@ $( document ).ready( () => {
             case "home": LoadHomePage(); break;
             case "projects": LoadProjects(); break;
             case "contact": LoadContactInfo(); break;
-            case "about": $(".container").empty(); break;
+            case "about": LoadAbout(); break;
         }
         selectSideBarLink(e.target.id);
     });
