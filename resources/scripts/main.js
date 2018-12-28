@@ -156,48 +156,6 @@ function LoadHomePage(){
     `;
 }
 
-function LoadContactInfo()
-{
-    $(".container").empty();
-    document.getElementsByClassName("container")[0].innerHTML = `
-    <div class="contact">    
-        <div class="contact-header">
-            Contact & Info
-        </div>
-        <hr>
-            <img class="contact-side-img" src="resources\\images\\gecko.jpg" alt="gecko picture"> 
-        
-        <div class="contact-content">
-            <span>The best way to contact me would be through LinkedIn </span><a href="https://www.linkedin.com/in/austindolve/" rel="noopener noreferrer" target="_blank"><img class="linkedin-img" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn"></a>
-        </div>
-    </div>
-    `;
-}
-
-function LoadAbout()
-{
-    $(".container").empty();
-    document.getElementsByClassName("container")[0].innerHTML = `
-    <div class="contact">    
-        <div class="contact-header">
-            About
-        </div>
-        <hr>
-            <img class="contact-side-img" src="resources\\images\\ocean_boat_two_isalnds.jpg" alt="ocean"> 
-        
-        <div class="contact-content">
-            <p></p>
-
-        </div>
-    </div>
-    `;
-}
-
-function typeWriterContactMe()
-{
-    
-}
-
 
 $( document ).ready( () => {
     $('.splashscreen-text').fadeIn(1500, "swing");
@@ -208,67 +166,58 @@ $( document ).ready( () => {
         }, 3000);
     });
 
-    LoadHomePage();
-
-    $(".sidebar a").on("click", (e)=>{
+    $(".home-header-text a").on("click", (e)=>{
         switch(e.target.id)
         {
-            case "home": LoadHomePage(); break;
-            case "projects": LoadProjects(); break;
-            case "contact": LoadContactInfo(); break;
-            case "about": LoadAbout(); break;
+            case "projects": ScrollToProjects(); break;
         }
         selectSideBarLink(e.target.id);
     });
+
+    LoadHomePage();
 });
 
 $('.splashscreen').on("mousemove", () => {
     AnimateIntro();
 });
 
-function selectSideBarLink(linkId)
+function ScrollToProjects()
 {
-    $(".sidebar a").each(function( a ) 
-    {
-
-        if($(this).attr('id') == linkId)
-        {
-            $(this).attr("class", "active");
-        }
-        else
-        {
-            $(this).attr("class", "");
-        }
-    });
-
+    $('html, body').animate({
+        scrollTop: ($('.container').offset().top)
+    },500);
 }
+
 // HideSplashScreen(10, 10);
 // ShowSidePanel(10, 10);
 function AnimateIntro()
 {
-    HideSplashScreen(1000, 1000);
-    ShowSidePanel(250, 3000);
-    ShowContainer(250, 3250)
-    //ShowContent(250, 2000);
+    HideSplashScreenIntro(1000, 1000);
+    // ShowSidePanel(250, 3000);
+    ShowProfile(1000,2000);
+    ShowContainer(250, 250);
+    
+    // ShowContent(250, 2000);
 }
 
-function HideSplashScreen(animationSpeed, timeout)
+function HideSplashScreenIntro(animationSpeed, timeout)
 {
     $(".splashscreen-loader").css("border-left", "7px solid #3498db");
     $(".splashscreen-loader").css("border-right", "7px solid #3498db");
     $(".splashscreen-loader").css("border-bottom", "7px solid #3498db");
 
-    setTimeout(() => { $('.splashscreen').fadeOut(animationSpeed); }, timeout);
+    setTimeout(() => { $('.splashscreen-loader').fadeOut(animationSpeed); }, timeout);
+    setTimeout(() => { $('.splashscreen-text').fadeOut(animationSpeed); }, timeout);
+}
+
+function ShowProfile(animationSpeed, timeout)
+{
+    setTimeout(() => { $('.home-header-text').fadeIn(animationSpeed);}, timeout);
 }
 
 function ShowContainer(animationSpeed, timeout)
 {
     setTimeout(() => { $('.container').fadeIn(animationSpeed);}, timeout);
-}
-
-function ShowSidePanel(animationSpeed, timeout)
-{
-    setTimeout(() => { $('.sidebar').animate({left: '0px'}, animationSpeed); }, timeout);
 }
 
 function ShowContent(animationSpeed, timeout)
