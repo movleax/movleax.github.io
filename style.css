@@ -383,6 +383,14 @@ div.home > div:nth-of-type(odd){
   .profile-pic {display: none;}
   .profile-pic-hr {display: none;}
 
+  .home-header-text{width:75%;}
+  .home-header-text #projects {padding:4px;}
+  .home-header-text h1 {padding:4px; margin: 4px;}
+  .home-header-text a img {
+    margin:7.5px;width: 40%;
+    left: 27%;
+  }
+
   .splashscreen-loader {
     left: 45%;
   }
@@ -393,6 +401,8 @@ div.home > div:nth-of-type(odd){
     text-align: center;
     float: none;
   }
+
+  .home-header-text{width:85%;}
 
   .profile-pic {display: none;}
   .profile-pic-hr {display: none;}
