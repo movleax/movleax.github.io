@@ -3,7 +3,7 @@ const homeData = [
         title: "MazeSolveJS",
         contentInfo: "MazeSolverJS is a JavaScript, canvas-based web app. This web app is designed to load in a map file, which contains ASCII characters for specifying the type of object to create, and the screen location of said object. For instance, when the map parser reads in a 'X' character, this tells the JavaScript program that a object of type Block should be created and pushed onto an array. Using basic math and knowing which iteration of parsing through the map file, a X and Y position can be derived and assigned to created objects. In the future, the app will have a dropdown list to choose which algorithm the maze should use to solve a given map. Currently, the solver object chooses a random direction once it has hit a wall.",
         photo: "https://raw.githubusercontent.com/movleax/MazeSolverJS/master/simple_maze_solver_algo.gif",
-        buttons: [["new-tab", "https://github.com/movleax/MazeSolverJS", "GitHub Project"], ["load", "https://movleax.github.io/MazeSolverJS/index.html", "Load"]]
+        buttons: [["new-tab", "https://github.com/movleax/MazeSolverJS", "GitHub Project"]/*,  ["load", "https://movleax.github.io/MazeSolverJS/index.html", "Load"] */]
     },
     {
         title: "Map Generator",
@@ -42,7 +42,7 @@ const projectsData = [
         title: "MazeSolveJS",
         projectInfo: "JavaScript, canvas-based web app. This web app is designed to load in a map file, which describes a maze, and solve the maze using a selected algorithm.",
         photo: "resources\\images\\MazeSolveJS.PNG",
-        buttons: [["new-tab", "https://github.com/movleax/MazeSolverJS", "GitHub Project"], ["load", "https://movleax.github.io/MazeSolverJS/index.html", "Load"]]
+        buttons: [["new-tab", "https://github.com/movleax/MazeSolverJS", "GitHub Project"]/* , ["load", "https://movleax.github.io/MazeSolverJS/index.html", "Load"] */]
     },
     {
         title: "Map Generator",
