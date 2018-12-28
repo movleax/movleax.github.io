@@ -117,8 +117,6 @@ function projectTemplate(project)
     
 function LoadProjects() {
 
-    $(".container").empty();
-    
     document.getElementsByClassName("container")[0].innerHTML = `
     <div class='grid-container'>
     ${projectsData.map(projectTemplate).join('')}
@@ -147,7 +145,6 @@ function homepageTemplate(content){
 }
 
 function LoadHomePage(){
-    $(".container").empty();
 
     document.getElementsByClassName("container")[0].innerHTML = `
     <div class='home'>
@@ -174,8 +171,24 @@ $( document ).ready( () => {
         selectSideBarLink(e.target.id);
     });
 
-    LoadHomePage();
+    var max_width700 = window.matchMedia("(max-width: 700px)")
+    checkWindowSize(max_width700) // Call listener function at run time
+    max_width700.addListener(checkWindowSize) // Attach listener function on state changes
 });
+
+    
+    
+function checkWindowSize(x) 
+{
+    if (x.matches) 
+    { // If media query matches
+        LoadProjects();
+    } 
+    else 
+    {
+        LoadHomePage();
+    }
+}
 
 $('.splashscreen').on("mousemove", () => {
     AnimateIntro();

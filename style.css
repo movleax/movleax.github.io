@@ -30,8 +30,9 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto;
   padding: 10px;
+  /* visibility: hidden; */
 }
 .grid-item {
   padding: 15px;
@@ -382,10 +383,6 @@ div.home > div:nth-of-type(odd){
   .profile-pic {display: none;}
   .profile-pic-hr {display: none;}
 
-  .grid-container {
-    grid-template-columns: auto;
-  }
-
   .splashscreen-loader {
     left: 45%;
   }
@@ -399,10 +396,6 @@ div.home > div:nth-of-type(odd){
 
   .profile-pic {display: none;}
   .profile-pic-hr {display: none;}
-
-  .grid-container {
-    grid-template-columns: auto;
-  }
 
   .splashscreen-loader {
     left: 45%;
