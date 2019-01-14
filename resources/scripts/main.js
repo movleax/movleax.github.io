@@ -4,7 +4,7 @@ const homeData = [
         contentInfo: `SnakeJS is a JavaScript take on the classic snake game, where the objective is to collect the food pellets, which cause your character to grow by a block size, and ultimately avoid obstacles.
 
         The app uses classes and basic OOP concepts (limited OOP due to JavaScript).
-        Design patterns utilized such as Command and State.
+        Design patterns utilized are currently Command and State.
         The Command pattern is used to encapsulate keyboard presses and which action should be executed for a given input.
         
         The State pattern is used to transition between different game states, such as the MainMenu or MainGame states.
@@ -55,7 +55,7 @@ const homeData = [
 const projectsData = [
     {
         title: "SnakeJS",
-        projectInfo: `SnakeJS is a JavaScript take on the classic snake game. Programming concepts used where Linked List (the snake's body), Command design pattern for keyboard input, and State design pattern for managing main menu and the main gameplay`,
+        projectInfo: `SnakeJS is a JavaScript take on the classic snake game. Programming concepts used are Linked List (the snake's body), Command design pattern for keyboard input, and State design pattern for managing main menu and the main gameplay`,
         photo: "https://raw.githubusercontent.com/movleax/SnakeJS/master/SnakeJSDesktop.gif",
         buttons: [["new-tab", "https://github.com/movleax/SnakeJS", "GitHub Project"]]
     },
