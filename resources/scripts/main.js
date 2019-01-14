@@ -1,5 +1,20 @@
 const homeData = [
     {
+        title: "SnakeJS",
+        contentInfo: `SnakeJS is a JavaScript take on the classic snake game, where the objective is to collect the food pellets, which cause your character to grow by a block size, and ultimately avoid obstacles.
+
+        The app uses classes and basic OOP concepts (limited OOP due to JavaScript).
+        Design patterns utilized such as Command and State.
+        The Command pattern is used to encapsulate keyboard presses and which action should be executed for a given input.
+        
+        The State pattern is used to transition between different game states, such as the MainMenu or MainGame states.
+        
+        Other concepts such as basic datastructures are used in this app also.
+        One notable data scrtucture is the linked list. For the actual snake, this is a class that controls a linked list of body node objects. This made implementing control logic for the snake much easier and elegant.`,
+        photo: "https://raw.githubusercontent.com/movleax/SnakeJS/master/SnakeJSDesktop.gif",
+        buttons: [["new-tab", "https://github.com/movleax/SnakeJS", "GitHub Project"]]
+    },
+    {
         title: "MazeSolveJS",
         contentInfo: "MazeSolverJS is a JavaScript, canvas-based web app. This web app is designed to load in a map file, which contains ASCII characters for specifying the type of object to create, and the screen location of said object. For instance, when the map parser reads in a 'X' character, this tells the JavaScript program that a object of type Block should be created and pushed onto an array. Using basic math and knowing which iteration of parsing through the map file, a X and Y position can be derived and assigned to created objects. In the future, the app will have a dropdown list to choose which algorithm the maze should use to solve a given map. Currently, the solver object chooses a random direction once it has hit a wall.",
         photo: "https://raw.githubusercontent.com/movleax/MazeSolverJS/master/simple_maze_solver_algo.gif",
@@ -27,17 +42,23 @@ const homeData = [
         title: "Space Patrol",
         contentInfo: "Though an old project, space patrol is an exciting 2D side-scrolling shooter where obstacles must avoided and enemies beat. Written in C++ and SDL.",
         photo: "resources\\images\\space_partol.PNG",
-        buttons: [["load", "", "More Info Coming soon"]]
+        buttons: [["dummy", "", "More Info Coming soon"]]
     },
     {
         title: "Mario Clone",
         contentInfo: "Another interesting classic written in C++. This offshoot mario clone offers a fun 2D platformer experience where items must be collected and enemies defeated.",
         photo: "resources\\images\\jacob_sdl.PNG",
-        buttons: [["load", "", "More Info Coming soon"]]
+        buttons: [["dummy", "", "More Info Coming soon"]]
     }
 ];
 
 const projectsData = [
+    {
+        title: "SnakeJS",
+        projectInfo: `SnakeJS is a JavaScript take on the classic snake game. Programming concepts used where Linked List (the snake's body), Command design pattern for keyboard input, and State design pattern for managing main menu and the main gameplay`,
+        photo: "https://raw.githubusercontent.com/movleax/SnakeJS/master/SnakeJSDesktop.gif",
+        buttons: [["new-tab", "https://github.com/movleax/SnakeJS", "GitHub Project"]]
+    },
     {
         title: "MazeSolveJS",
         projectInfo: "JavaScript, canvas-based web app. This web app is designed to load in a map file, which describes a maze, and solve the maze using a selected algorithm.",
@@ -66,13 +87,13 @@ const projectsData = [
         title: "Space Patrol",
         projectInfo: "Though an old project, space patrol is an exciting 2D side-scrolling shooter where obstacles must avoided and enemies beat. Written in C++ and SDL.",
         photo: "resources\\images\\space_partol.PNG",
-        buttons: [["load", "", "More Info Coming soon"]]
+        buttons: [["dummy", "", "More Info Coming soon"]]
     },
     {
         title: "Mario Clone",
         projectInfo: "Another interesting classic written in C++. This offshoot mario clone offers a fun 2D platformer experience where items must be collected and enemies defeated.",
         photo: "resources\\images\\jacob_sdl.PNG",
-        buttons: [["load", "", "More Info Coming soon"]]
+        buttons: [["dummy", "", "More Info Coming soon"]]
     }
 ];
 
@@ -84,6 +105,7 @@ function getButtonClickType(button)
     {
         case "new-tab": onclick = `window.open('${button[1]}')`; break;
         case "load": onclick = `$('.container').load('${button[1]}')`; break;
+        case "dummy": onclick = ``; break;
     }
 
     return onclick;
