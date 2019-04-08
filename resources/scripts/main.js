@@ -20,8 +20,8 @@ const homeData = [
         
         The State pattern is used to transition between different game states, such as the MainMenu or MainGame states.
         
-        Other concepts such as basic datastructures are used in this app also.
-        One notable data scrtucture is the linked list. For the actual snake, this is a class that controls a linked list of body node objects. This made implementing control logic for the snake much easier and elegant.`,
+        Other concepts such as basic data structures are used in this app also.
+        One notable data structure is the linked list. For the actual snake, this is a class that controls a linked list of body node objects. This made implementing control logic for the snake much easier and elegant.`,
         photo: "https://raw.githubusercontent.com/movleax/SnakeJS/master/SnakeJSDesktop.gif",
         buttons: [["new-tab", "https://github.com/movleax/SnakeJS", "GitHub Project"]]
     },
@@ -35,7 +35,7 @@ const homeData = [
         title: "Map Generator",
         contentInfo: `Map generator is coded in C# and uses Winforms as the graphics host.
         This program begins by reading shape files from a designated folder. Specifically, each shape file represents a graphical shape, and is represented by ASCII characters. Unique ASCII characters will also tell the program where connection points are located on the shape. Each shape will then be processed into a drawable graphical object and stored into a list.
-        Next, the program then grabs a shape file to place in the center of the screen. Once this object is placed on the screen, the program will randomly grab another object given its list of shapes, and attempt to connect this shape with any currently placed shape onscreen. An example of an unsuccessful placement onscreen would be a collision of any shape object already placed. Otherwise, the shape object will be placed onscreen and the process will repeat.`,
+        Next, the program then grabs a shape file to place in the center of the screen. Once this object is placed on the screen, the program will randomly grab another object given its list of shapes, and attempt to connect this shape with any currently placed shape on screen. An example of an unsuccessful placement on screen would be a collision of any shape object already placed. Otherwise, the shape object will be placed on screen and the process will repeat.`,
         photo: "https://raw.githubusercontent.com/movleax/dungeonGeneratorPoC/master/readme_resources/dungeon_generator_running.gif",
         buttons: [["new-tab", "https://github.com/movleax/dungeonGeneratorPoC", "GitHub Project"]]
     },
@@ -48,21 +48,22 @@ const homeData = [
     {
         title: "Hipster Delivery",
         contentInfo: `Way back in the summer of 2014, during the advent of simple yet viral games, such as flappy bird, Hipster Delivery was conceived. 
-        With a burning desire to release a mobile application on the google play storem, this mobile application was created with Unity, C#, GIMP, and alot of hard work. 
-        Ultimately, Hipster Delivery plays as a 2D "Infinite Runner", where the objective is to deliver newspapers (by tapping on building targets) while avoiding obstacles such as bicyclists and trash bins (By swiping up or down onscreen). 
-        Survive long enough, and perhaps the protaganist will be ambushed by an alien spaceshipe hurling trashbins?!`,
+        With a burning desire to release a mobile application on the google play store, this mobile application was created with Unity, C#, GIMP, and a lot of hard work. 
+        Ultimately, Hipster Delivery plays as a 2D "Infinite Runner", where the objective is to deliver newspapers (by tapping on building targets) while avoiding obstacles such as bicyclists and trash bins (By swiping up or down on screen). 
+        Survive long enough, and perhaps the protagonist will be ambushed by an alien spaceship hurling trash bins?!`,
         photo: "resources\\images\\hipsterDeliverRun.jpg",
         buttons: [["new-tab", "https://play.google.com/store/apps/details?id=com.austindolve.hipsterdelivery&hl=en_US", "Google Play Store"]]
     },
     {
         title: "Space Patrol",
-        contentInfo: "Though an old project, space patrol is an exciting 2D side-scrolling shooter where obstacles must avoided and enemies beat. Written in C++ and SDL.",
+        contentInfo: `Created completely with C++, MS Paint, audacity, and SDL, Space Patrol is an exciting 2D side-scrolling shooter where asteroids are constantly flying towards the protagonist's spaceship, and alien space ships will attempt to fire lasers at you.
+        To say the least, Space Patrol is a very old project (nearly a decade ago), this was one of the first big projects I worked on, and definitely holds sentimental value`,
         photo: "resources\\images\\space_partol.PNG",
         buttons: [["dummy", "", "More Info Coming soon"]]
     },
     {
         title: "Mario Clone",
-        contentInfo: "Another interesting classic written in C++. This offshoot mario clone offers a fun 2D platformer experience where items must be collected and enemies defeated.",
+        contentInfo: `Another interesting classic written in C++, MS Paint, and SDL. Oddly enough, this project started out as a Game Engine project during winter break of sophomore year in college. A few months later, and the project evolved into a goal of creating a 2D Platformer, like mario. This program was the first time I created a way to parse ASCII text from a file in order to build a graphical 2D map. Another fun fact, the game was created as a joke gift for a friend's birthday. This offshoot mario clone offers a fun 2D platformer experience where enemies must be defeated and items must be collected in order to continue to the next level.`,
         photo: "resources\\images\\jacob_sdl.PNG",
         buttons: [["dummy", "", "More Info Coming soon"]]
     }
@@ -89,7 +90,7 @@ const projectsData = [
     },
     {
         title: "Map Generator",
-        projectInfo: "Coded in C#, this program reads shape files with ASCII content from a designated folder, creates graphical objects based on the shape files, and performs calculations to connect these shapes in a cohesive manner onscreen.",
+        projectInfo: "Coded in C#, this program reads shape files with ASCII content from a designated folder, creates graphical objects based on the shape files, and performs calculations to connect these shapes in a cohesive manner on screen.",
         photo: "resources\\images\\dungeonGenerator.jpg",
         buttons: [["new-tab", "https://github.com/movleax/dungeonGeneratorPoC", "GitHub Project"]]
     },
@@ -101,19 +102,19 @@ const projectsData = [
     },
     {
         title: "Hipster Delivery",
-        projectInfo: "Created with Unity, C#, GIMP, and alot of hard work, Hipster Delivery plays as a 2D \"Infinite Runner\", where the objective is to deliver newspapers while avoiding obstacles such as bicyclists and trash bins (and possibly an alien spaceship hurling trashbins at you)",
+        projectInfo: "Created with Unity, C#, GIMP, and a lot of hard work, Hipster Delivery plays as a 2D \"Infinite Runner\", where the objective is to deliver newspapers while avoiding obstacles such as bicyclists and trash bins (and possibly an alien spaceship hurling trash bins at you)",
         photo: "resources\\images\\hipsterDeliverRun.jpg",
         buttons: [["new-tab", "https://play.google.com/store/apps/details?id=com.austindolve.hipsterdelivery&hl=en_US", "Google Play Store"]]
     },
     {
         title: "Space Patrol",
-        projectInfo: "Though an old project, space patrol is an exciting 2D side-scrolling shooter where obstacles must avoided and enemies beat. Written in C++ and SDL.",
+        projectInfo: "Though an old project, space patrol is an exciting 2D side-scrolling shooter where asteroids and alien laser beams must avoided and enemies beat. Created with C++, MS Paint, Audacity, and SDL",
         photo: "resources\\images\\space_partol.PNG",
         buttons: [["dummy", "", "More Info Coming soon"]]
     },
     {
         title: "Mario Clone",
-        projectInfo: "Another interesting classic written in C++. This offshoot mario clone offers a fun 2D platformer experience where items must be collected and enemies defeated.",
+        projectInfo: "Another interesting classic written in C++, MS Paint, and SDL. This offshoot mario clone offers a fun 2D platformer experience where items must be collected and enemies defeated.",
         photo: "resources\\images\\jacob_sdl.PNG",
         buttons: [["dummy", "", "More Info Coming soon"]]
     }
