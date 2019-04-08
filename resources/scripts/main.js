@@ -33,7 +33,9 @@ const homeData = [
     },
     {
         title: "Map Generator",
-        contentInfo: "Top-down 2D Map generator in C#. The program reads shape files from a designated folder, and performs calculations to connect these shapes in a cohesive manner. ",
+        contentInfo: `Map generator is coded in C# and uses Winforms as the graphics host.
+        This program begins by reading shape files from a designated folder. Specifically, each shape file represents a graphical shape, and is represented by ASCII characters. Unique ASCII characters will also tell the program where connection points are located on the shape. Each shape will then be processed into a drawable graphical object and stored into a list.
+        Next, the program then grabs a shape file to place in the center of the screen. Once this object is placed on the screen, the program will randomly grab another object given its list of shapes, and attempt to connect this shape with any currently placed shape onscreen. An example of an unsuccessful placement onscreen would be a collision of any shape object already placed. Otherwise, the shape object will be placed onscreen and the process will repeat.`,
         photo: "https://raw.githubusercontent.com/movleax/dungeonGeneratorPoC/master/readme_resources/dungeon_generator_running.gif",
         buttons: [["new-tab", "https://github.com/movleax/dungeonGeneratorPoC", "GitHub Project"]]
     },
@@ -84,7 +86,7 @@ const projectsData = [
     },
     {
         title: "Map Generator",
-        projectInfo: "Coded in C#, this program reads shape files from a designated folder, and performs calculations to connect these shapes in a cohesive manner.",
+        projectInfo: "Coded in C#, this program reads shape files with ASCII content from a designated folder, creates graphical objects based on the shape files, and performs calculations to connect these shapes in a cohesive manner onscreen.",
         photo: "resources\\images\\dungeonGenerator.jpg",
         buttons: [["new-tab", "https://github.com/movleax/dungeonGeneratorPoC", "GitHub Project"]]
     },
