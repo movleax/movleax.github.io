@@ -47,7 +47,10 @@ const homeData = [
     },
     {
         title: "Hipster Delivery",
-        contentInfo: "Created with Unity and C#, this android game plays as a 2D \"Infinite Runner\", where the objective is to deliver papers while avoiding obstacles.",
+        contentInfo: `Way back in the summer of 2014, during the advent of simple yet viral games, such as flappy bird, Hipster Delivery was conceived. 
+        With a burning desire to release a mobile application on the google play storem, this mobile application was created with Unity, C#, GIMP, and alot of hard work. 
+        Ultimately, Hipster Delivery plays as a 2D "Infinite Runner", where the objective is to deliver newspapers (by tapping on building targets) while avoiding obstacles such as bicyclists and trash bins (By swiping up or down onscreen). 
+        Survive long enough, and perhaps the protaganist will be ambushed by an alien spaceshipe hurling trashbins?!`,
         photo: "resources\\images\\hipsterDeliverRun.jpg",
         buttons: [["new-tab", "https://play.google.com/store/apps/details?id=com.austindolve.hipsterdelivery&hl=en_US", "Google Play Store"]]
     },
@@ -98,7 +101,7 @@ const projectsData = [
     },
     {
         title: "Hipster Delivery",
-        projectInfo: "Created with Unity and C#, this android game plays as a 2D \"Infinite Runner\", where the objective is to deliver papers while avoiding obstacles.",
+        projectInfo: "Created with Unity, C#, GIMP, and alot of hard work, Hipster Delivery plays as a 2D \"Infinite Runner\", where the objective is to deliver newspapers while avoiding obstacles such as bicyclists and trash bins (and possibly an alien spaceship hurling trashbins at you)",
         photo: "resources\\images\\hipsterDeliverRun.jpg",
         buttons: [["new-tab", "https://play.google.com/store/apps/details?id=com.austindolve.hipsterdelivery&hl=en_US", "Google Play Store"]]
     },
