@@ -1,5 +1,16 @@
 const homeData = [
     {
+        title: "iAmHungry Mobile App",
+        contentInfo: `iAMHungry is a mobile application, created to organize and help offer location suggestions based the user's favorite restaurants.
+        The user can add, remove, and configure restaurant criteria for the app, so it can offer the best options for your current situation.
+        Uses React Native, JavaScript, Google Maps API, and REST services.
+        A backend server was created with a Arch Linux based distro, Java Spring Boot, and MariaDB to supply the app with the REST services and database storage.
+        JSON Web Tokens are used as a security method for accessing the REST api.
+        Future prospect for this project involve migrating the backend server to an AWS EC2 instance, and furthering development on the front-end.`,
+        photo: "resources\\images\\iAmHungry_showcase.gif",
+        buttons: [["new-tab", "https://github.com/movleax/iAmHungryReactNative", "GitHub Project"]]
+    },
+    {
         title: "SnakeJS",
         contentInfo: `SnakeJS is a JavaScript take on the classic snake game, where the objective is to collect the food pellets, which cause your character to grow by a block size, and ultimately avoid obstacles.
 
@@ -53,6 +64,12 @@ const homeData = [
 ];
 
 const projectsData = [
+    {
+        title: "iAmHungry Mobile App",
+        projectInfo: `A mobile application, created to organize and help offer location suggestions based the user's favorite restaurants. The user can add, remove, and configure restaurant criteria, so the app can offer the best options. Uses React Native, JavaScript, Google Maps API, and REST services via a hand crafted backend server.`,
+        photo: "resources\\images\\iAmHungry_showcase.gif",
+        buttons: [["new-tab", "https://github.com/movleax/iAmHungryReactNative", "GitHub Project"]]
+    },
     {
         title: "SnakeJS",
         projectInfo: `SnakeJS is a JavaScript take on the classic snake game. Programming concepts used are Linked List (the snake's body), Command design pattern for keyboard input, and State design pattern for managing main menu and the main gameplay`,
