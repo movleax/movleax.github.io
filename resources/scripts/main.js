@@ -1,12 +1,22 @@
 const homeData = [
     {
+        title: "SHMUP_1_23",
+        contentInfo: `SHMUP_1_23 is a game programming project created with Unity, GIMP, LMMS. 
+        SHMUP_1_23 is a shoot 'em up genre that started out as a way to not only re-learn Unity but also utilize many software engineering skills. These skills are design patterns, use of OOP concepts, future-proofing architecture, and keeping things highly cohesive & loosely coupled.
+        Can be played on mobile and desktop via WebGL (mobile screen must be rotated to landscape mode for best experience).
+        While at the time of writing this, the game is not necessarilly polished, though, it certainly is playable and features a level + boss.
+        `,
+        photo: "resources\\images\\shmup_1_23.gif",
+        buttons: [["new-tab", "https://movleax.github.io/shmup_1_23/", "Play Game"]]
+    },
+    {
         title: "iAmHungry Mobile App",
         contentInfo: `iAMHungry is a mobile application, created to organize and help offer location suggestions based the user's favorite restaurants.
         The user can add, remove, and configure restaurant criteria for the app, so it can offer the best options for your current situation.
         Uses React Native, JavaScript, Google Maps API, and REST services.
         A backend server was created with a Arch Linux based distro, Java Spring Boot, and MariaDB to supply the app with the REST services and database storage.
         JSON Web Tokens are used as a security method for accessing the REST api.
-        Future prospect for this project involve migrating the backend server to an AWS EC2 instance, and furthering development on the front-end.`,
+        This project was migrated to an AWS EC2 instance and made it to an Alpha-testing state on Google Play`,
         photo: "resources\\images\\iAmHungry_showcase.gif",
         buttons: [["new-tab", "https://github.com/movleax/iAmHungryReactNative", "GitHub Project"]]
     },
@@ -71,6 +81,12 @@ const homeData = [
 
 const projectsData = [
     {
+        title: "SHMUP_1_23",
+        contentInfo: `SHMUP_1_23 is a game programming project created with Unity, GIMP, LMMS. Can be played on mobile and desktop via WebGL (mobile screen must be rotated for best experience). While at the time of writing this, the game is not necessarilly polished, though, it certainly is playable and features a level + boss.`,
+        photo: "resources\\images\\shmup_1_23.gif",
+        buttons: [["new-tab", "https://movleax.github.io/shmup_1_23/", "Play Game"]]
+    },
+    {
         title: "iAmHungry Mobile App",
         projectInfo: `A mobile application, created to organize and help offer location suggestions based the user's favorite restaurants. The user can add, remove, and configure restaurant criteria, so the app can offer the best options. Uses React Native, JavaScript, Google Maps API, and REST services via a hand crafted backend server.`,
         photo: "resources\\images\\iAmHungry_showcase.gif",
@@ -110,13 +126,13 @@ const projectsData = [
         title: "Space Patrol",
         projectInfo: "Though an old project, space patrol is an exciting 2D side-scrolling shooter where asteroids and alien laser beams must avoided and enemies beat. Created with C++, MS Paint, Audacity, and SDL",
         photo: "resources\\images\\space_partol.PNG",
-        buttons: [["dummy", "", "More Info Coming soon"]]
+        buttons: [["dummy", "", "TBD"]]
     },
     {
         title: "Mario Clone",
         projectInfo: "Another interesting classic written in C++, MS Paint, and SDL. This offshoot mario clone offers a fun 2D platformer experience where items must be collected and enemies defeated.",
         photo: "resources\\images\\jacob_sdl.PNG",
-        buttons: [["dummy", "", "More Info Coming soon"]]
+        buttons: [["dummy", "", "TBD"]]
     }
 ];
 
