@@ -82,7 +82,7 @@ const homeData = [
 const projectsData = [
     {
         title: "SHMUP_1_23",
-        contentInfo: `SHMUP_1_23 is a game programming project created with Unity, GIMP, LMMS. Can be played on mobile and desktop via WebGL (mobile screen must be rotated for best experience). While at the time of writing this, the game is not necessarilly polished, though, it certainly is playable and features a level + boss.`,
+        projectInfo: `SHMUP_1_23 is a game programming project created with Unity, GIMP, LMMS. Can be played on mobile and desktop via WebGL (mobile screen must be rotated for best experience). While at the time of writing this, the game is not necessarilly polished, though, it certainly is playable and features a level + boss.`,
         photo: "resources\\images\\shmup_1_23.gif",
         buttons: [["new-tab", "https://movleax.github.io/shmup_1_23/", "Play Game"]]
     },
